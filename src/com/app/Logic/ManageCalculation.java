@@ -48,12 +48,17 @@ public class ManageCalculation extends BaseProc  {
 		}
 	}
 	
-	public void calculateFinalPrice(Product product, User user){
+public void calculateFinalPrice(Product product, User user) throws InterruptedException{
 		Double price = 0.0;
 		price = (product.getCost()-product.getDiscount()+product.getTaxRate());
-		System.out.println("----------------------------------------------------------------------------------");
+		for(int i=0;i<16;i++){
+			System.out.print("-----");
+			Thread.sleep(200);
+			System.out.flush();
+		}
+		System.out.println("");
 		System.out.println( " "+user.getName()+" purchased "+product.getName()+" with final price:$"+price+" from "+this.stateCode+" Apple Store"); 
-		System.out.println("----------------------------------------------------------------------------------");
+		System.out.println("--------------------------------------------------------------------------------");
 		
 	}
 
